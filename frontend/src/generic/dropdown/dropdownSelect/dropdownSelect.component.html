@@ -1,0 +1,10 @@
+<button md-button #trigger [mdMenuTriggerFor]="dropdown" class="dropdown-toggle" type="button" 
+    data-toggle="dropdown" aria-haspopup="true">
+    <span class="selected-item">{{itemToStr(selected)}}</span>
+    <md-icon>expand_more</md-icon>
+</button>
+<md-menu #dropdown="mdMenu" class="dropdown" [overlapTrigger]="false">
+    <button md-menu-item class="dropdown-item" *ngFor="let item of list" (mousedown)="select(item)">
+        <a class="option">{{itemToStr(item)}}</a>
+    </button>
+</md-menu>

@@ -1,0 +1,10 @@
+<div class="tag-list-wrap" role="group" aria-label="tag-group">
+    <button md-raised-button class="tag-wrap" *ngFor="let tag of assignedTags">
+        <span class="tag-text">{{tag.toUIString()}}</span>
+        <button md-icon-button title="remove-tag" type="button" class="remove-button"
+        (click)="removeTagById(tag.id)">
+            <md-icon>clear</md-icon>
+        </button>
+    </button>
+    <dropdown-add [list]="availableTags" (selectItem)="addTag($event)"></dropdown-add>
+</div>

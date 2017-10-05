@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-orange);
+$accent: mat-palette($mat-grey);
+$warn: mat-palette($mat-red);
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+* {
+    font-family: "Roboto-Regular";
+}
+
+button, md-button-toggle {
+    font-size: 14px;
+}
+
+.mat-icon-button{
+    opacity: 0.7;
+}
+
+.mat-icon-button:hover{
+    opacity: 1.0;
+}

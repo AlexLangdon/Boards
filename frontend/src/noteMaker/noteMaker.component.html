@@ -1,0 +1,21 @@
+<md-card class="note-maker" [style.background]="'#'+newNote.colour">
+    <div fxLayout="row">
+        <md-input-container fxFlex="60%">
+            <input mdInput type="text" class="title-input" [(ngModel)]="newNote.title" 
+                [errorStateMatcher]="errorMatcher.bind(this)" placeholder="Title">
+            <md-error class="title-error">{{titleErrorText}}</md-error>
+        </md-input-container>
+        <div fxFlex="30%" class="note-draggable col-xs-3">
+            <dropdown-select [list]="allBoards" [selected]="newNote.board" (selectItem)="updateNoteBoard($event)"></dropdown-select>
+        </div>
+        <div fxFlex="10%">
+            <button md-icon-button class="reset-button" (click)="resetNote()">
+                <md-icon>delete</md-icon>
+            </button>
+        </div>
+    </div>
+    <tag-list [assignedTags]="newNote.tags" [allTags]="allTags" (tagAdded)="addTag($event)" (tagRemovedById)="removeTagById($event)"></tag-list>
+    <textarea class="text-input" placeholder="take a note ..." [(ngModel)]="newNote.content"></textarea>
+    <colour-picker [colours]="noteColours" [currentColour]="newNote.colour" (colourSelected)="updateColour($event)"></colour-picker>
+    <button md-raised-button class="done-button" type="button" (click)="noteDone()">Done</button>
+</md-card>

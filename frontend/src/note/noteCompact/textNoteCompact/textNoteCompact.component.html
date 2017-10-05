@@ -1,0 +1,24 @@
+<md-card class="note-draggable note-card" [style.background]="'#'+noteModel.colour">
+  <div fxLayout="row">
+    <div fxFlex="60%" class="note-draggable">
+      <md-card-title class="note-title">
+        {{noteModel.title}}
+      </md-card-title>
+    </div>
+    <div fxFlex="30%">
+      <dropdown-select class="boards-dropdown" [list]="allBoards" 
+          [selected]="noteModel.board" (selectItem)="updateBoard($event)"></dropdown-select>
+    </div>
+    <div fxFlex="10%">
+      <button md-icon-button class="delete-note" (click)="deleteThisNote()">
+          <md-icon>delete</md-icon>
+      </button>
+    </div>
+  </div>
+  <div class="note-body">
+    <tag-list [assignedTags]="noteModel.tags" [allTags]="allTags" (tagAdded)="addTag($event)" 
+      (tagRemovedById)="removeTagById($event)" class="note-draggable"></tag-list>
+    <colour-picker [colours]="noteColours" [currentColour]="noteModel.colour" (colourSelected)="updateColour($event)"></colour-picker>
+    <textarea #content class="note-contents" (blur)="endContentEdit(content)" [value]="noteModel.content"></textarea>
+  </div>
+</md-card>

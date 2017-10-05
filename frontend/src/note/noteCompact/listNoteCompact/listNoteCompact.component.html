@@ -1,0 +1,27 @@
+<md-card class="note-draggable note-card">
+  <div fxLayout="row">
+    <div fxFlex="60%" class="note-draggable">
+      <md-card-title class="note-title">
+        {{noteModel.title}}
+      </md-card-title>
+    </div>
+    <div fxFlex="30%">
+      <dropdown-select [list]="allBoards" [selected]="noteModel.board" (selectItem)="updateNoteBoard($event)"></dropdown-select>
+    </div>
+    <div fxFlex="10%">
+      <button md-icon-button class="delete-note" (click)="removeNote()">
+          <md-icon>delete</md-icon>
+      </button>
+    </div>
+  </div>
+  <div class="note-body">
+    <tag-list [tagsActive]="noteModel.tags" [allTags]="allTags" (tagAdded)="addTag($event)" 
+      (tagRemovedById)="removeTagById($event)" class="note-draggable"></tag-list>
+    <div [dragula]='"note-item-bag"' [dragulaModel]='noteModel.content'>
+      <note-item *ngFor="let noteItem of noteModel.content; let i = index; trackBy:itemTracker" 
+        [item]="noteItem" [index]="i" (remove)="removeItem($event)"
+        (update)="updateNoteItem($event)"></note-item>
+    </div>
+  </div>
+  <string-input (entryAdded)="addItemString($event)" class="note-draggable"></string-input>
+</md-card>

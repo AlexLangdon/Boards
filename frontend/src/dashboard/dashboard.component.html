@@ -1,0 +1,35 @@
+<div>
+    <div class="page-header">
+        <h1>Boards</h1>
+    </div>
+    <div class="container">
+        <note-maker [allBoards]="boardFilters" [allTags]="tagFilters"
+            (noteAdded)="addNote($event)">
+        </note-maker>
+        <hr>
+        <filter-exp-input [boards]='boardFilters' [tags]='tagFilters'
+            (updateActiveBoards)='setActiveFilters($event, boardFilters)'
+            (updateActiveTags)='setActiveFilters($event, tagFilters)'>
+        </filter-exp-input>
+        <div>
+            <filter-group class="inline-filters" [title]="'Boards'" [filters]="boardFilters"
+                (filterUpdated)= "updateBoard($event)"
+                (filterToggled)="boardFilters = replaceFiltersInSet($event, boardFilters)"
+                (filterStrAdded)="addBoard($event)"
+                (filterDeletedById)="deleteBoardById($event)">
+            </filter-group>
+            <filter-group class="inline-filters" [title]="'Tags'" [filters]="tagFilters"
+                (filterUpdated)= "updateTag($event)"
+                (filterToggled)="tagFilters = replaceFiltersInSet($event, tagFilters)"
+                (filterStrAdded)="addTag($event)"
+                (filterDeletedById)="deleteTagById($event)">
+            </filter-group>
+        </div>
+        <hr>
+        <div [dragula]='"note-bag"' [dragulaModel]='notes'>
+            <text-note *ngFor="let note of notes; let i = index; trackBy:noteTracker" [noteModel]="note"
+            [allBoards]="boardFilters" [allTags]="tagFilters" [index]="i" [hidden]="filteredOut(note)"
+            (deleteNoteById)="deleteNote($event)" (updateNote)="updateNote($event)"></text-note>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<md-card>
+    <md-card-title>Edit {{input.title}}</md-card-title>
+    <md-card-content>
+        <md-list>
+            <form class="current-filters" [formGroup]="editFilterForm.controls[CURRENT_FILTERS]">
+                <md-list-item *ngFor="let controlName of getControlsArray(CURRENT_FILTERS); let i = index">
+                    <md-input-container>
+                        <input mdInput formControlName="{{controlName}}" 
+                            (blur)="updateFilter($event.target.value, i)">
+                        <md-error class="error-text" *ngIf="hasFieldError(CURRENT_FILTERS, i, EMPTY_ERROR)" >
+                            {{EMPTY_ERROR_TXT}}
+                        </md-error>
+                        <md-error class="error-text" *ngIf="hasFieldError(CURRENT_FILTERS, i, DUPLICATE_ERROR)" >
+                            {{DUPLICATE_ERROR_TXT}}
+                        </md-error>
+                    </md-input-container>
+                    <button class="delete-button" md-icon-button type="button" (click)="deleteFilter(i)">
+                        <md-icon>clear</md-icon>
+                    </button>
+                </md-list-item>
+            </form>
+            <form class="added-filters" [formGroup]="editFilterForm.controls[ADDED_FILTERS]">
+                <md-list-item *ngFor="let controlName of getControlsArray(ADDED_FILTERS); let i = index">
+                    <md-input-container>
+                        <input mdInput formControlName="{{controlName}}" 
+                            (blur)="updateAddedFilter($event.target.value, i)">
+                        <md-error class="error-text" *ngIf="hasFieldError(ADDED_FILTERS, i, EMPTY_ERROR)">
+                            {{EMPTY_ERROR_TXT}}
+                        </md-error>
+                        <md-error class="error-text" *ngIf="hasFieldError(ADDED_FILTERS, i, DUPLICATE_ERROR)">
+                            {{DUPLICATE_ERROR_TXT}}
+                        </md-error>
+                    </md-input-container>
+                    <button class="delete-button" md-icon-button type="button" (click)="deleteAddedFilter(i)">
+                        <md-icon>clear</md-icon>
+                    </button>
+                </md-list-item>
+            </form>
+        </md-list>
+    </md-card-content>
+    <md-card-footer>
+        <md-input-container>
+            <input mdInput class="new-filter-input" md-type="text" placeholder="Add new"
+                [errorStateMatcher]="hasNewFilterError.bind(this)"
+                [(ngModel)]="inputFilterName">
+            <md-error class="new-filter-error">{{newFilterError}}</md-error>
+        </md-input-container>
+        <button md-icon-button class="add-filter-button" type="button" (click)="addFilter()">
+            <md-icon>add</md-icon>
+        </button>
+        <md-card-actions>
+            <button md-raised-button class="done-button" (click)="closeScreen()">Done</button>
+        </md-card-actions>
+    </md-card-footer>
+</md-card>

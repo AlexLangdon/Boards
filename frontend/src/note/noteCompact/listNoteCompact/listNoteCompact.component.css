@@ -1,0 +1,27 @@
+.note-card {
+    display: inline-block;
+    max-width: 400px;
+}
+
+.note-body {
+     padding-top: 5px;
+ }
+
+.note-title {
+    word-break: break-all;
+    margin: 0;
+}
+
+.gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    opacity: 0.75;
+    position: fixed;
+    pointer-events: none;
+}
+
+tag-list {
+    width: 100%;
+    display: inline-block;
+}

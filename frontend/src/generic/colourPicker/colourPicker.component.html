@@ -1,0 +1,19 @@
+<button md-icon-button class="menu-trigger" [mdMenuTriggerFor]="colourMenu">
+    <md-icon>color_lens</md-icon>
+</button>
+
+<md-menu #colourMenu="mdMenu" [overlapTrigger]="false" yPosition="below">
+    <md-grid-list cols="4" rowHeight="36px">
+        <md-grid-tile *ngFor="let colour of colours">
+            <button class="colour-button" md-menu-item (mousedown)="select(colour)">
+                <svg class="circle-wrap">
+                    <circle class="colour-icon" cx="13" cy="24" r="12" 
+                        stroke="grey" [attr.fill]="'#'+colour"/>
+                </svg>
+                <md-icon class="selected-colour" *ngIf="colour === currentColour">
+                    done
+                </md-icon>
+            </button>
+        </md-grid-tile>
+    </md-grid-list>
+</md-menu>

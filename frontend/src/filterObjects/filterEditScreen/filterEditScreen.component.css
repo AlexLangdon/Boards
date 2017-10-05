@@ -1,0 +1,17 @@
+md-card {
+    width: 300px;
+    text-align: center;
+}
+
+md-list-item {
+    margin-left: 10px;
+}
+
+md-card-actions {
+    margin-left: 50%;
+}
+
+.stuff {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,9 @@
+<button md-icon-button class="dropdown-toggle" type="button" 
+    data-toggle="dropdown" aria-haspopup="true" #trigger="mdMenuTrigger" [mdMenuTriggerFor]="dropdown" [disabled]="isListEmpty()" >
+    <md-icon>add_box</md-icon>
+</button>
+<md-menu #dropdown="mdMenu" class="dropdown">
+    <button md-menu-item class="dropdown-item" *ngFor="let item of list" (mousedown)="select(item)">
+        <a class="option">{{itemToStr(item)}}</a>
+    </button>
+</md-menu>

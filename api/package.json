@@ -1,0 +1,29 @@
+{
+  "name": "boards-api",
+  "version": "0.5.0",
+  "description": "boards data api",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node ./node_modules/mocha/bin/_mocha \"src/**/*.spec.js\"",
+    "cover": "node ./node_modules/istanbul/lib/cli.js cover -x \"src/**/*.spec.js\" ./node_modules/mocha/bin/_mocha --coverage -- \"src/**/*.spec.js\""
+  },
+  "author": "AlexLangdon bleed310",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "config": "^1.26.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mysql2": "^1.3.5",
+    "sequelize": "^4.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "chai-http": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.6"
+  }
+}

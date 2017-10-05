@@ -1,0 +1,28 @@
+.note-maker {
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.title-box{
+    margin: 0;
+}
+
+tag-list {
+    width: 100%;
+    display: inline-block;
+}
+
+.text-input {
+    display: block;
+    width: 90%;
+    min-height: 30px;
+    max-height: 300px;
+    padding: 5px;
+    margin: 10px 10px;
+    font-size: 16px;
+    text-align: left;
+    overflow: auto;
+    border-color: #C0C0C0;
+    resize: none;
+}

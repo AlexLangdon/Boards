@@ -1,0 +1,43 @@
+.container{
+    text-align: center;
+}
+
+.page-header{
+    display: block;
+    overflow: auto;
+    text-align: center;
+}
+
+.sign-in {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    margin-bottom: 5px;
+}
+
+note {
+    margin: 5px;
+    display: inline-block;
+}
+
+.gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    opacity: 0.75;
+    position: fixed;
+    pointer-events: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.inline-filters {
+    display: inline-block;
+    margin-top: 15px;
+}

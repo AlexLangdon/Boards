@@ -1,0 +1,42 @@
+.note-card {
+    display: inline-block;
+    max-width: 400px;
+    margin: 5px;
+}
+
+.note-body {
+     padding-top: 5px;
+ }
+
+.note-title {
+    word-break: break-all;
+    margin: 0;
+}
+
+.gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    opacity: 0.75;
+    position: fixed;
+    pointer-events: none;
+}
+
+tag-list {
+    width: 100%;
+    display: inline-block;
+}
+
+.note-contents {
+    font-size: 16px;
+    padding: 5px;
+    margin: 10px;
+    width: 350px;
+    resize: none;
+    border-color: #C0C0C0;
+}
+
+colour-picker {
+    float: right;
+    margin-right: 10px;
+}

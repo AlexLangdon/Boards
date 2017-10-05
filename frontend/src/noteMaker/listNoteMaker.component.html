@@ -1,0 +1,22 @@
+<md-card class="note-maker">
+    <div fxLayout="row">
+        <md-input-container fxFlex="60%">
+            <input mdInput type="text" class="title-input" [(ngModel)]="newNote.title" placeholder="Title">
+        </md-input-container>
+        <div fxFlex="30%" class="note-draggable col-xs-3">
+            <dropdown-select [list]="allBoards" [selected]="newNote.board" (selectItem)="updateNoteBoard($event)"></dropdown-select>
+        </div>
+        <div fxFlex="10%">
+            <button md-icon-button class="remove-button" (click)="removeNote()">
+                <md-icon>delete</md-icon>
+            </button>
+        </div>
+    </div>
+    <tag-list [tagsActive]="newNote.tags" [allTags]="allTags" (tagAdded)="addTag($event)" (tagRemoved)="removeTag($event)"></tag-list>
+    <div class="item-bag" [dragula]="'note-maker-bag'" [dragulaModel]='newNote.content'>
+        <note-item *ngFor="let noteItem of newNote.content; let i = index; trackBy:itemTracker" 
+        [item]="noteItem" [index]="i" (remove)="removeItem($event)" (update)="updateItem($event)">
+        </note-item>
+    </div>
+    <string-input (entryAdded)="entryAddClicked($event)"></string-input>
+</md-card>

@@ -1,0 +1,11 @@
+<md-card class="note-item note-item-draggable" [class.list-group-item-success]="item.complete">
+    <div class="check-wrap">
+        <md-checkbox class="done-checkbox" [checked] = "item.complete" (change)="toggleChecked()"></md-checkbox>
+    </div>
+    <label class="item-contents note-item-draggable">{{item.content}}</label>
+    <div>
+        <button md-icon-button title="remove" class="remove-button" (click)="removeItem()">
+            <md-icon>cancel</md-icon>
+        </button>
+    </div>
+</md-card>

@@ -1,0 +1,6 @@
+<div class="filter-group" fxLayout="row" data-toggle="buttons">
+    <label filter-button *ngFor="let filter of filters" [filterModel]="filter" (update)="toggleFilter($event)"></label>
+    <button md-icon-button class="edit-button" (click)="showFilterEditBox()">
+        <md-icon>mode_edit</md-icon>
+    </button>
+</div>
