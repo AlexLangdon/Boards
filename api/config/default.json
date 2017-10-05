@@ -1,0 +1,10 @@
+{
+    "mysql": {
+        "host": "localhost",
+        "port": "3300",
+        "user": "root",
+        "password": "sql-password-here",
+        "database": "boards"
+    }
+}
+
