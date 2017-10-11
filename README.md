@@ -1,15 +1,17 @@
 # Boards
 
-A note-taking web app made with Angular 4, Express, SQL and Material design libraries. Tested with Karma, Mocha and Chai.
+A note-taking web app made with Angular 4, Express, SQL and Material design libraries. 
+Frontend tested with Karma, Mocha and Chai.
 
 #### Functionality:
 -	Add tags and categorise notes into boards
 -	Standard create, read, update, delete operations for notes, tags and boards
 -	Apply a filter to only show notes that have a certain tag/board
--	Setting a note colour
--	Drag + drop interface
+-	Change note colours
+-	Drag + drop notes
+-	Material design styling
 
-*Note - See the dev branch for some unimplemented components such as notes with list items*
+*Note - See the dev branch for unimplemented components such as notes with list items*
 
 ![Boards Screenshot](/boards1.jpg?raw=true "Boards Screenshot")
 
