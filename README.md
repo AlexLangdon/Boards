@@ -11,6 +11,7 @@ A note-taking web app made with Angular 4, Express, SQL and Material design libr
 
 *Note - See the dev branch for some unimplemented components such as notes with list items*
 
+![Boards Screenshot](/boards1.jpg?raw=true "Boards Screenshot")
 
 ## Running locally
 
