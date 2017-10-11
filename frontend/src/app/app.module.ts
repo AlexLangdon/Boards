@@ -4,7 +4,6 @@ import { HttpModule } from '@angular/http';
 import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 import { AppRoutingModule } from './appRouting.module';
 import { Dashboard } from '../dashboard/dashboard.component';
-import { NoteItem } from '../noteItem/noteItem.component';
 import { TextNoteCompact } from '../note/noteCompact/textNoteCompact/textNoteCompact.component';
 import { NoteMaker } from '../noteMaker/noteMaker.component';
 import { NoteService } from '../backend/note/note.service';
@@ -16,7 +15,6 @@ import { FilterEditScreen } from '../filterObjects/filterEditScreen/filterEditSc
 import { DropdownSelect } from '../generic/dropdown/dropdownSelect/dropdownSelect.component';
 import { DropdownAdd } from '../generic/dropdown/dropdownAdd/dropdownAdd.component';
 import { TagList } from '../tagList/tagList.component';
-import { StringInput } from '../generic/stringInput/stringInput.component';
 import { FilterExpInput } from '../filterObjects/filterExpInput/filterExpInput.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -42,14 +40,12 @@ import { AppComponent } from './app.component';
     Dashboard,
     NoteMaker,
     TextNoteCompact,
-    NoteItem,
     FilterButton,
     FilterGroup,
     FilterEditScreen,
     DropdownSelect,
     DropdownAdd,
     TagList,
-    StringInput,
     FilterExpInput,
     ColourPicker
   ],

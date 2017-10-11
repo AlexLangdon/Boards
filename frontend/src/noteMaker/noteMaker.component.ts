@@ -1,6 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NoteItemModel } from '../noteItem/noteItem.model';
-import { NoteItem } from '../noteItem/noteItem.component';
 import { TextNoteCompact } from '../note/noteCompact/textNoteCompact/textNoteCompact.component';
 import { TextNoteModel } from '../note/noteModels/textNote.model';
 import { NoteProp } from '../note/noteModels/noteProp.model';
