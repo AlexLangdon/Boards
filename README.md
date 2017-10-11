@@ -26,7 +26,7 @@ To run locally requires setting up and running the frontend, database and API se
 ### Database
 
 1. Ensure MySQL server version 5.7.19 or higher is installed
-2. Import the dbDump.sql file containing the "boards" database into the local server instance
+2. Import the `dbDump.sql` file containing the "boards" database into the local server instance
 3. Run the SQL server on port 3300
 
 ### API
