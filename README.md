@@ -1,10 +1,20 @@
 # Boards
 
-A note taking web app made with Angular 4, Express, SQL and Material design libraries. Tested with Karma, Mocha and Chai.
+A note-taking web app made with Angular 4, Express, SQL and Material design libraries. Tested with Karma, Mocha and Chai.
+
+#### Functionality:
+-	Add tags and categorise notes into boards
+-	Standard create, read, update, delete operations for notes, tags and boards
+-	Apply a filter to only show notes that have a certain tag/board
+-	Setting a note colour
+-	Drag + drop interface
+
+*Note - See the dev branch for some unimplemented components such as notes with list items*
+
 
 ## Running locally
 
-To run locally requires setting up the frontend, database and API servers as given below. It is recommended to have npm and Node version 8 installed beforehand.
+To run locally requires setting up and running the frontend, database and API servers as given below. It is recommended to have npm and Node version 8 installed beforehand.
 
 ### Frontend
 
